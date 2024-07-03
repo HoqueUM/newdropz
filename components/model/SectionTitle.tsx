@@ -5,6 +5,9 @@ const brandNames: { [key: string]: string } = {
     cheetos: 'Cheetos',
     lays: 'Lays',
     mtndew: 'Mountain Dew',
+    fritos: 'Fritos',
+    popcorners: 'Popcorners',
+    pepsi: 'Pepsi',
     tacobell: 'Taco Bell'
 };
 
