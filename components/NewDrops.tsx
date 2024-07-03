@@ -8,6 +8,9 @@ const NewDrops = () => {
       <SectionModel brand="cheetos" />
       <SectionModel brand="lays" />
       <SectionModel brand="mtndew" />
+      <SectionModel brand="fritos" />
+      <SectionModel brand="popcorners" />
+      <SectionModel brand="pepsi" />
       <SectionModel brand="tacobell" />
     </>
   )
