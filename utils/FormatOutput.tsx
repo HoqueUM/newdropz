@@ -12,7 +12,16 @@ async function getProps(brand: string) {
 }
 
 const FormatOutput = ({ brand }: { brand: string }) => {
-  const [items, setItems] = useState<{ id: number, img: string, name: string }[]>([]);
+  type Item = {
+    id: number;
+    name: string;
+    vals: {
+      img: string;
+      status: number; 
+      upc: string[]; 
+    };
+  };
+  const [items, setItems] = useState<Item[]>([]);
 
   useEffect(() => {
     getProps(brand).then(setItems);
@@ -21,7 +30,7 @@ const FormatOutput = ({ brand }: { brand: string }) => {
   return (
     <div className='flex flex-wrap justify-center gap-4'>
     {items.map((item) => (
-        <ItemCard key={item.id} image={item.img} name={item.name} />
+        <ItemCard key={item.id} image={item.vals.img} name={item.name} brand={brand} />
     ))}
     </div>
   );

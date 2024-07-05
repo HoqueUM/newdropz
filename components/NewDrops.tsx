@@ -11,7 +11,6 @@ const NewDrops = () => {
       <SectionModel brand="fritos" />
       <SectionModel brand="popcorners" />
       <SectionModel brand="pepsi" />
-      <SectionModel brand="tacobell" />
     </>
   )
 }
