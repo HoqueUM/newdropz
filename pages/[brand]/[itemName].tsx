@@ -28,6 +28,7 @@ async function fetchBrandData(brand: string): Promise<Item[]> {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+  // Define your list of brands here
   const brands = ['doritos', 'cheetos', 'lays', 'mtndew', 'fritos', 'popcorners', 'pepsi'];
   let paths: { params: { brand: string; itemName: string } }[] = [];
 

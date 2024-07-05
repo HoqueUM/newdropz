@@ -11,14 +11,16 @@ export const GetLocation = ({ children, itemName, brand, onLocationSet }: { chil
   const router = useRouter();
   const [location, setLocation] = useState<{ latitude: number | null, longitude: number | null }>({ latitude: null, longitude: null });
 
-  const getLocation = () => {
+  const getLocation = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
           setLocation({ latitude, longitude });
-          onLocationSet(latitude, longitude); 
+          onLocationSet(latitude, longitude);  // Pass location to the parent component
 
+          // Navigate to the new page after setting the location
           const href = `/${encodeURIComponent(brand)}/${encodeURIComponent(itemName)}?lat=${latitude}&lon=${longitude}`;
           router.push(href);
         },
