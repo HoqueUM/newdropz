@@ -30,7 +30,7 @@ const FormatOutput = ({ brand }: { brand: string }) => {
   return (
     <div className='flex flex-wrap justify-center gap-4'>
     {items.map((item) => (
-        <ItemCard key={item.id} image={item.vals.img} name={item.name} brand={brand} onLocationSet={() => {}} />
+        <ItemCard key={item.id} image={item.vals.img} name={item.name} brand={brand} />
     ))}
     </div>
   );
