@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react'; // Add useState import
 import Image from 'next/image';
 import GetLocation from '../GetLocation';
 
@@ -20,9 +20,19 @@ const ItemCard = ({ image, name, brand, onLocationSet }: { image: string, name: 
     onLocationSet(); // Call onLocationSet when the touch ends on the item card
   };
 
+  const [latitude, setLatitude] = useState<string | null>(null);
+  const [longitude, setLongitude] = useState<string | null>(null);
+
+  // This function is not used within this component. 
+  // If it's intended for external use, consider passing it as a prop or lifting state up.
+  const handleLocationSet = (lat: number, lon: number) => {
+    setLatitude(lat.toString());
+    setLongitude(lon.toString());
+  };
+
   return (
     <div onClick={handleClick} onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
-      <GetLocation itemName={name} brand={brand} onLocationSet={onLocationSet}>
+      <GetLocation itemName={name} brand={brand} onLocationSet={handleLocationSet}>
         <div className="relative w-full h-48 transform transition-transform duration-300 hover:scale-105 max-w-xs rounded overflow-hidden shadow-lg hover:shadow-2xl bg-primary-color">
           <Image
             src={image}
