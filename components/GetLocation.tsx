@@ -18,9 +18,8 @@ export const GetLocation = ({ children, itemName, brand, onLocationSet }: { chil
         (position) => {
           const { latitude, longitude } = position.coords;
           setLocation({ latitude, longitude });
-          onLocationSet(latitude, longitude);  // Pass location to the parent component
+          onLocationSet(latitude, longitude);  
 
-          // Navigate to the new page after setting the location
           const href = `/${encodeURIComponent(brand)}/${encodeURIComponent(itemName)}?lat=${latitude}&lon=${longitude}`;
           router.push(href);
         },
