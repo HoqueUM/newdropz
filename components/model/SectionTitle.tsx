@@ -17,7 +17,7 @@ const SectionTitle = ({ brand }: { brand: string }) => {
   return (
     <div className='flex justify-center items-center pb-9'>
       <div className='flex justify-center items-center'>
-        <h1 className="text-4xl font-bold text-center text-primary-color">{formattedBrand}</h1>
+        <h1 className="text-4xl font-bold text-center text-secondary-color">{formattedBrand}</h1>
       </div>
     </div>
   );

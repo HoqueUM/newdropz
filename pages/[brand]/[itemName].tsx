@@ -93,23 +93,29 @@ const ItemPage = ({ itemData }: { itemData: Item }) => {
   }, [lat, lon, itemData.vals.upc]);
 
   return (
-    <div>
-      <h1>{itemData.name}</h1>
-      <img src={itemData.vals.img} alt={itemData.name} />
-      <p>Status: {itemData.vals.status}</p>
-      <p>UPC: {itemData.vals.upc.join(', ')}</p>
-      <h2>Locations</h2>
-      {locations.length > 0 ? (
-        <ul>
-          {locations.map((location, index) => (
-            <li key={index}>
-              {location.name} - {location.address}, {location.city}, {location.state} {location.zip}
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>No locations found.</p>
-      )}
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-4xl mx-auto bg-primary-color p-8 rounded-lg shadow-md">
+        <h1 className="text-3xl font-semibold mb-6 text-secondary-color">{itemData.name}</h1>
+        <div className="relative w-full mb-6">
+          <img src={itemData.vals.img} alt={itemData.name} className="object-cover w-full h-full rounded-lg" />
+        </div>
+        <div className="mb-4">
+          <p className="text-lg mb-2"><strong>Status:</strong> {itemData.vals.status}</p>
+          <p className="text-lg mb-4"><strong>UPC:</strong> {itemData.vals.upc.join(', ')}</p>
+        </div>
+        <h2 className="text-2xl font-semibold mb-4">Locations</h2>
+        {locations.length > 0 ? (
+          <ul className="list-disc pl-5">
+            {locations.map((location, index) => (
+              <li key={index} className="mb-2">
+                <span className="font-semibold">{location.name}</span> - {location.address}, {location.city}, {location.state} {location.zip}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-lg text-gray-500">No locations found.</p>
+        )}
+      </div>
     </div>
   );
 };
