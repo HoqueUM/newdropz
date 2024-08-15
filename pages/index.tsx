@@ -7,7 +7,13 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
+    <>
+    <p className="text-3xl">This website is currently under maintenance until September 1, 2024.</p>
+    <p>However, all of the source code can be found <a href="https://github.com/HoqueUM/newdropz" target="_blank" className="underline">here</a></p>
+    </>
+    /*
     <main className={`${inter.className} min-h-screen bg-gray-100`}>
+      /*
       <header className="bg-primary-color text-white p-6 shadow-xl z-50 flex items-center justify-between">
         <div className="flex items-center">
           <Image src={newdropz} alt="NewDropz Logo" width={50} height={50} />
@@ -20,6 +26,8 @@ export default function Home() {
       <footer className="bg-gray-800 text-white p-4 text-center">
         <p>&copy; 2024 NewDropz. All rights reserved.</p>
       </footer>
+      
     </main>
+    */
   );
 }
