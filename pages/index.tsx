@@ -9,7 +9,6 @@ export default function Home() {
   return (
     
     <main className={`${inter.className} min-h-screen bg-gray-100`}>
-      /*
       <header className="bg-primary-color text-white p-6 shadow-xl z-50 flex items-center justify-between">
         <div className="flex items-center">
           <Image src={newdropz} alt="NewDropz Logo" width={50} height={50} />
